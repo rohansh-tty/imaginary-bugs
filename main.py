@@ -93,6 +93,12 @@ def shell_injection(user_input):
     result = subprocess.call(f"echo {user_input}", shell=True)
     return result
 
+def confusing_type(value):
+    if value == 'admin':
+        return 1 
+    return 'Not Allowed'
+
+
 # Styling issue: Inconsistent indentation and line length
 if __name__ == "__main__":
    print("Running bug-infested code...")
@@ -105,8 +111,9 @@ if __name__ == "__main__":
    print(global_variable_abuse())
    resource_leak()
    print(infinite_recursion(10))  # This will cause a runtime error
-   hardocoded_password()
+   hardcoded_password()
    shell_injection("ls")
    # calling undefined function
    undef()
+   confusing_type('not admin')
    print("This line will never be reached due to the error above")
