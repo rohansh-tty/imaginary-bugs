@@ -63,6 +63,28 @@ def infinite_recursion(n):
         return 0
     return 1 + infinite_recursion(n)  # Missing base case
 
+
+def sql_injection_vulnerability(user_id):
+    """
+    This function demonstrates a SQL injection vulnerability.
+    """
+    # Security risk: SQL injection
+    conn = sqlite3.connect('example.db')
+    cursor = conn.cursor()
+    query = f"SELECT * FROM users WHERE id = {user_id}"
+    cursor.execute(query)
+    return cursor.fetchall()
+
+def hardcoded_password():
+    """
+    This function uses a hardcoded password.
+    """
+    # Security risk: Hardcoded credentials
+    username = "admin"
+    password = "super_secret_password123"
+    return f"Connecting to database with {username}:{password}"
+
+
 # Styling issue: Inconsistent indentation and line length
 if __name__ == "__main__":
    print("Running bug-infested code...")
