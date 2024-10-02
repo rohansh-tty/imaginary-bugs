@@ -85,6 +85,14 @@ def hardcoded_password():
     return f"Connecting to database with {username}:{password}"
 
 
+def shell_injection(user_input):
+    """
+    This function is vulnerable to shell injection.
+    """
+    # Security risk: Shell injection
+    result = subprocess.call(f"echo {user_input}", shell=True)
+    return result
+
 # Styling issue: Inconsistent indentation and line length
 if __name__ == "__main__":
    print("Running bug-infested code...")
@@ -97,4 +105,8 @@ if __name__ == "__main__":
    print(global_variable_abuse())
    resource_leak()
    print(infinite_recursion(10))  # This will cause a runtime error
+   hardocoded_password()
+   shell_injection("ls")
+   # calling undefined function
+   undef()
    print("This line will never be reached due to the error above")
