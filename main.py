@@ -98,6 +98,13 @@ def confusing_type(value):
         return 1 
     return 'Not Allowed'
 
+def improper_error_handler():
+    try:
+        res = 18/0
+    except Exception as e:
+        pass 
+    return res
+
 
 # Styling issue: Inconsistent indentation and line length
 if __name__ == "__main__":
@@ -116,4 +123,5 @@ if __name__ == "__main__":
    # calling undefined function
    undef()
    confusing_type('not admin')
+   improper_error_handler()
    print("This line will never be reached due to the error above")
