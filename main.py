@@ -98,6 +98,9 @@ def confusing_type(value):
         return 1 
     return 'Not Allowed'
 
+def confusing_type_with_hints(value) -> int:
+    return 'not allowed'
+
 def improper_error_handler():
     try:
         res = 18/0
